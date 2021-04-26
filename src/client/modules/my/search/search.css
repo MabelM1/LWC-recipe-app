@@ -1,0 +1,19 @@
+.search-bg {
+    background: #f1f2f2 url("resources/background.jpg") no-repeat center center;
+}
+
+.search-container {
+    background-color:white;
+   border-radius: 30px;
+   width: 80%;
+   max-width: 1260px; 
+}
+
+@media only screen and (max-width: 575px) {
+    .search-bg  {
+        height: 100vh;
+    }
+
+ 
+
+  }
