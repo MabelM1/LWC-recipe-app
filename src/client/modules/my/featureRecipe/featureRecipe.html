@@ -1,0 +1,19 @@
+<template>   
+  <div class="col">
+    <div class="card shadow mb-3 shadow-pop-tr" style="max-width: 540px;">
+      <img class="rounded-top card-img-top" src={recipeCard.strMealThumb} alt="...">
+      <div class="card-body custom-card-body">
+        <img  src='../resources/forkicon.png' class="fork-icon">
+        <h5 class="card-title my-3">{recipeCard.strMeal}</h5>
+        <button class="btn custom-button" onclick={fireClickEvent}>
+          View recipe
+          <span class="line"></span>
+        </button>
+      </div>
+    </div>
+  </div>     
+</template>
+
+
+
+

@@ -12,6 +12,15 @@ const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3001;
 const DIST_DIR = './dist';
 
+app.use((req,res, next)=> {
+    res.setHeader(
+      'Content-Security-Policy',
+      "script-src 'self' https://www.themealdb.com/api/json/v1/1/random.php",
+      "img-src 'self' https://www.themealdb.com/api/json/v1/1/random.php"
+      )
+      return next()
+  })
+
 app.use(express.static(DIST_DIR));
 
 app.use('*', (req, res) => {

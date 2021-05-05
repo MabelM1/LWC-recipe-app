@@ -1,0 +1,25 @@
+<template>   
+  <div class="row g-0 justify-content-center ">
+    <div class="card flex-row shadow mb-3 shadow-pop-tr" style="max-width: 700px;">
+      <div class="row g-0">
+        <div class="col-md-6 ">
+          <img class="rounded-top card-img-top " src={recipeCard.strMealThumb} alt="...">
+        </div>
+
+        <div class="col-md-6">
+          <div class="card-body d-flex align-items-center flex-column custom-card-body">
+            <div class="recipe-seal-container">
+              <img class="recipe-seal" src="../resources/feature.png" alt="">
+            </div>
+            <img src='../resources/forkicon.png' class="fork-icon mt-5">
+            <h5 class="card-title mt-3">{recipeCard.strMeal}</h5>
+            <button class="btn custom-button mt-3" onclick={fireClickEvent}>
+                View recipe
+              <span class="line"></span>
+            </button>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>    
+</template>

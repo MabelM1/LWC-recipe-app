@@ -1,32 +1,24 @@
 <template>
-
-  <div class="container-fluid search-bg">
-    <div class="row no-gutters search-row align-items-center justify-content-center">
-
-      <div class="container my-5  search-container ">
-
-        <div class="col">
-
-          <div class="row">
-            <h1 class="display-4 text-center my-5">Search for recipes</h1>
-          </div>
-
-          <form class="row justify-content-center pb-5">
-            <div class="col-auto "> 
-              <input type="text" class="form-control m-2" 
+  <section class="search">
+    <div class="overlay">
+      <div class="container search-container h-100">
+        <div class="row justify-content-center align-items-center h-100">
+          <div class="col-md-6">
+            <div class="input-group input-group-lg ">
+              <span class="input-group-text">
+                <img src="../resources/search.png" >
+              </span>
+              <input type="text" 
+              class="form-control search-input" 
               id="ingredientSerch" 
-              placeholder="chicken....">
+              onkeyup={handleChange}
+              name="ingredient"
+              value={ingredient}
+              placeholder="Search by ingredient...">
             </div>
-            <div class="col-auto">
-              <button type="submit" class="btn btn-primary m-2 ">Search</button>
-            </div>
-          </form>
+          </div>
         </div>
-
       </div>
-
     </div>
-  </div>
+  </section>
 </template>
-
-

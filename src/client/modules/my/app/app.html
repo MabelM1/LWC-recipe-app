@@ -1,4 +1,45 @@
-<template>
-   <!-- Search component-->
-   <my-search></my-search>
+<template >
+
+  <div class="d-flex flex-column h-100">
+     <!-- Home Page component-->
+    <template if:true={showHomePage} >
+        <!-- Navbar component-->
+      <my-navbar ></my-navbar>
+
+          <!-- Alert component-->
+      <template if:true={showAlert}>
+        <my-alert></my-alert>
+      </template>
+
+      <!-- Search component-->
+      <my-search onsearch={handleSearch}></my-search>
+
+      <!-- Recipe(s) section -->
+      <div class="container flex-grow-1 py-5"   oncardselect={handleCardSelect}>
+        <template if:true={showFeatureRecipe}>
+          <h2 class="my-5 text-center">Feature Recipe</h2>
+          <my-recipe  key={recipe.idMeal}  recipe-card={recipe}></my-recipe>
+        </template>
+  
+        <template if:true={showRecipeList}>
+          <h2 class="my-5 text-center">Recipes</h2>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <template for:each={recipes} for:item="recipe">
+              <my-feature-recipe key={recipe.idMeal} recipe-card={recipe}></my-feature-recipe>
+            </template>
+          </div>            
+        </template>
+      </div>
+    </template>
+
+    <!-- Detail Page component-->
+    <div class="container flex-grow-1" >
+      <template if:true={showDetailPage}>
+        <my-detail-recipe recipe={selectedRecipe} onnavigatehome={handleNavigateHome}></my-detail-recipe>
+      </template>
+    </div>
+    <!-- Footer section -->
+    <my-footer></my-footer>
+  </div>
 </template>
+

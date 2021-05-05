@@ -1,0 +1,48 @@
+<template>
+  <div class="container d-flex justify-content-center flex-column h-100 d-grid gap-3 bg-light">
+      <!-- Recipe Header section -->
+    <div class="row g-2 pt-3">
+        <div class="col-8 py-4 rounded-top recipe-title-container">
+          <span class="line m-auto"></span>
+          <h1 class="m-auto mt-3 recipe-title">{recipe.strMeal}</h1>
+        </div>
+        <div class="col-3 m-auto d-flex justify-content-center">
+          <button class="btn custom-button bg-dark" onclick={handleBackButton}>Go back</button>
+        </div>
+    </div>
+
+     <!-- Recipe Body section -->
+    <div class="row g-2">
+      <div class="col-md-8 d-flex flex-column recipe-image-container" >
+          <div class="row">
+            <div class="col-md-12 pt-4 mb-4 d-flex justify-content-center">
+              <img  src={recipe.strMealThumb} class="img-fluid border border-4 border-warning rounded recipe-image">
+            </div>
+          </div>
+        
+          <div class="row g-0">
+            <div class="col-md-12 p-3 instruction-container">
+              <p>{recipe.strInstructions}</p>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-md-3 m-auto px-3 py-4 ingredients-container">   
+        <template for:each={ingredients} for:item="ingredient">
+          <p  key={ingredient} class="text-center" >
+            {ingredient}
+          </p>
+        </template>
+      </div>
+    </div>
+    
+     <!-- Recipe Footer section -->
+    <div class="row g-2 align-items-center justify-content-center">
+      <div class="col-md-3 bg-warning p-3 mb-4">
+        <p class="text-center">Category: {recipe.strCategory}</p>
+        <p class="text-center">Tags: {recipe.strArea}</p>
+      </div>
+    </div>
+  </div>
+</template>
+
